@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "name": "Monika Policy",
+  "description": "内容政策闸门：入站分级、表达/黑话学习黑名单、出站兜底、检索审计；P0 政治与密钥零容忍，低俗梗不学习。",
+  "author": {
+    "name": "DRAGON",
+    "url": "https://github.com/dragon-qq-fish"
+  },
+  "license": "MIT",
+  "urls": {
+    "repository": "https://github.com/dragon-qq-fish/monika-policy",
+    "homepage": "https://github.com/dragon-qq-fish/monika-policy",
+    "documentation": "https://github.com/dragon-qq-fish/monika-policy#readme",
+    "issues": "https://github.com/dragon-qq-fish/monika-policy/issues"
+  },
+  "host_application": {
+    "min_version": "1.0.0",
+    "max_version": "1.9.9"
+  },
+  "sdk": {
+    "min_version": "2.5.2",
+    "max_version": "2.99.99"
+  },
+  "dependencies": [],
+  "capabilities": [
+    "send.text"
+  ],
+  "i18n": {
+    "default_locale": "zh-CN",
+    "supported_locales": ["zh-CN"]
+  },
+  "id": "dragon.monika-policy"
+}

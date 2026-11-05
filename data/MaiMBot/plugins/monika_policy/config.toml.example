@@ -1,0 +1,33 @@
+# Monika 内容政策（monika_policy）配置
+# 规则正文在 policy/ 目录，可用 scripts/policy_selftest.py 回归后再上线。
+
+[plugin]
+enabled = true
+config_version = "1.0.0"
+
+[policy]
+# 相对插件目录的规则文件
+rules_file = "policy/policy_rules.json"
+dynamic_terms_file = "policy/dynamic_terms.json"
+
+# 审计落盘（容器内路径；宿主机对应 /opt/qq-fish/data/MaiMBot/policy/）
+audit_path = "/MaiMBot/data/policy/audit.jsonl"
+audit_max_bytes = 2000000
+
+inbound_guard_enabled = true      # 入站分级：P0 中止整条链路
+learning_guard_enabled = true     # 表达/黑话学习黑名单
+outgoing_guard_enabled = true     # 出站兜底（P0 取消发送）
+retrieval_audit_enabled = true    # 注入上下文的 P0/P1 命中审计（只观测）
+
+[reply]
+# P0 是否回一句自然婉拒（插件直连 NapCat OneBot WS 发送，不经过模型）
+p0_reply_enabled = true
+p0_reply_cooldown_seconds = 600
+napcat_ws = "ws://maim-bot-napcat:3001"
+napcat_token = ""                 # 与 monika_piano 保持一致，勿提交
+
+[hints]
+# 只在对应当前轮次被标记时注入，普通消息零成本
+P1 = "上一条消息里有不适合模仿的表达：不要复读、不要再追问它的细节、不要展开，只做一句最短的敷衍或直接转到别的话题。"
+P1_quarantine = "上一条消息里有我没把握的网络说法：不确定就先问一句是什么意思，不要猜测、不要顺着展开。"
+P2 = "上一条是信息量很低的热梗：接一句就收住，不要主动扩散、不要反复复读。"

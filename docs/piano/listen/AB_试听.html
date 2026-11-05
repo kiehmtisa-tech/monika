@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Monika Piano 作曲优化 A/B 验收</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+         margin: 0; padding: 32px 24px 64px; background: #f6f6f4; color: #22221f; }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 600; margin: 0 0 6px; }
+  .sub { color: #6b6a64; font-size: 13px; margin-bottom: 24px; }
+  .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
+  .kpi { background: #fff; border: 1px solid #e2e1db; border-radius: 12px; padding: 14px 16px; }
+  .kpi .label { font-size: 12px; color: #6b6a64; margin-bottom: 6px; }
+  .kpi .val { font-size: 20px; font-weight: 600; }
+  .kpi .val small { font-size: 12px; font-weight: 400; color: #6b6a64; margin-left: 4px; }
+  .card { background: #fff; border: 1px solid #e2e1db; border-radius: 12px;
+           padding: 16px 18px; margin-bottom: 14px; }
+  .card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .card-head h3 { font-size: 15px; font-weight: 600; margin: 0; }
+  .tag { font-size: 11px; color: #6b6a64; border: 1px solid #e2e1db;
+          border-radius: 999px; padding: 2px 8px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .side { border-radius: 10px; padding: 12px; }
+  .side.old { background: #faf9f6; border: 1px solid #ecebe5; }
+  .side.new { background: #f3f8f3; border: 1px solid #d9e8d9; }
+  .side-title { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+  .side.old .side-title { color: #8a877d; }
+  .side.new .side-title { color: #2f6b3a; }
+  .stats { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px;
+            color: #55544e; margin-bottom: 10px; }
+  .stats b { font-weight: 600; color: #22221f; }
+  audio { width: 100%; height: 34px; }
+  .phrase { font-size: 12px; color: #6b6a64; margin-top: 10px; padding-top: 10px;
+             border-top: 1px dashed #e2e1db; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: #444440; }
+  table { width: 100%; border-collapse: collapse; background: #fff; font-size: 12px;
+           border: 1px solid #e2e1db; border-radius: 12px; overflow: hidden; }
+  th, td { padding: 7px 8px; text-align: right; border-bottom: 1px solid #f0efea; }
+  th { background: #faf9f6; font-weight: 600; color: #55544e; text-align: right;
+        position: sticky; top: 0; }
+  td:first-child, th:first-child, td:nth-child(2), th:nth-child(2),
+  td:nth-child(3), th:nth-child(3) { text-align: left; }
+  tr.old td { color: #8a877d; }
+  tr.new td { background: #f7fbf7; }
+  h2 { font-size: 15px; font-weight: 600; margin: 30px 0 12px; }
+  .note { font-size: 12px; color: #6b6a64; line-height: 1.7; margin-top: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Monika Piano 作曲优化 · A/B 验收</h1>
+  <div class="sub">引擎 v0.3 → v0.4 · 同 mood / tempo / seed 对照 · 2026-11-03</div>
+
+  <div class="summary">
+    <div class="kpi"><div class="label">连续同音率（越低越好）</div>
+      <div class="val">53% → 7%</div></div>
+    <div class="kpi"><div class="label">最长同音连击</div>
+      <div class="val">12 → 3<small>个音</small></div></div>
+    <div class="kpi"><div class="label">无旋律小节（8 小节内）</div>
+      <div class="val">4 → 0<small>小节</small></div></div>
+    <div class="kpi"><div class="label">强拍落在和弦音上</div>
+      <div class="val">14% → 90%</div></div>
+  </div>
+
+  <h2>逐组试听</h2>
+  
+    <div class="card">
+      <div class="card-head">
+        <h3>平静 calm · seed=1001</h3>
+        <span class="tag">同参数对照</span>
+      </div>
+      <div class="pair">
+        <div class="side old">
+          <div class="side-title">旧版 v0.3</div>
+          <div class="stats">
+            <span>同音率 <b>43%</b></span>
+            <span>最长同音 <b>9</b></span>
+            <span>空小节 <b>4</b></span>
+            <span>强拍和弦音 <b>33%</b></span>
+          </div>
+          <audio controls preload="none" src="mp3/legacy_piece_1001_calm.mp3"></audio>
+        </div>
+        <div class="side new">
+          <div class="side-title">新版 v0.4</div>
+          <div class="stats">
+            <span>同音率 <b>3%</b></span>
+            <span>最长同音 <b>2</b></span>
+            <span>空小节 <b>0</b></span>
+            <span>强拍和弦音 <b>100%</b></span>
+          </div>
+          <audio controls preload="none" src="mp3/new_piece_1001_calm.mp3"></audio>
+        </div>
+      </div>
+      <div class="phrase">
+        乐句峰值 旧 <code>[79, 82, 0, 0]</code> → 新 <code>[72, 72, 81, 72]</code>
+        &nbsp;|&nbsp; 有声乐句 旧 2/4 → 新 4/4
+        &nbsp;|&nbsp; 节奏型 旧 2 → 新 3
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <h3>平静 calm · seed=1002</h3>
+        <span class="tag">同参数对照</span>
+      </div>
+      <div class="pair">
+        <div class="side old">
+          <div class="side-title">旧版 v0.3</div>
+          <div class="stats">
+            <span>同音率 <b>70%</b></span>
+            <span>最长同音 <b>12</b></span>
+            <span>空小节 <b>4</b></span>
+            <span>强拍和弦音 <b>0%</b></span>
+          </div>
+          <audio controls preload="none" src="mp3/legacy_piece_1002_calm.mp3"></audio>
+        </div>
+        <div class="side new">
+          <div class="side-title">新版 v0.4</div>
+          <div class="stats">
+            <span>同音率 <b>3%</b></span>
+            <span>最长同音 <b>2</b></span>
+            <span>空小节 <b>0</b></span>
+            <span>强拍和弦音 <b>88%</b></span>
+          </div>
+          <audio controls preload="none" src="mp3/new_piece_1002_calm.mp3"></audio>
+        </div>
+      </div>
+      <div class="phrase">
+        乐句峰值 旧 <code>[84, 86, 0, 0]</code> → 新 <code>[67, 67, 76, 67]</code>
+        &nbsp;|&nbsp; 有声乐句 旧 2/4 → 新 4/4
+        &nbsp;|&nbsp; 节奏型 旧 2 → 新 3
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <h3>忧伤 melancholy · seed=2001</h3>
+        <span class="tag">同参数对照</span>
+      </div>
+      <div class="pair">
+        <div class="side old">
+          <div class="side-title">旧版 v0.3</div>
+          <div class="stats">
+            <span>同音率 <b>54%</b></span>
+            <span>最长同音 <b>10</b></span>
+            <span>空小节 <b>4</b></span>
+            <span>强拍和弦音 <b>50%</b></span>
+          </div>
+          <audio controls preload="none" src="mp3/legacy_piece_2001_melancholy.mp3"></audio>
+        </div>
+        <div class="side new">
+          <div class="side-title">新版 v0.4</div>
+          <div class="stats">
+            <span>同音率 <b>8%</b></span>
+            <span>最长同音 <b>3</b></span>
+            <span>空小节 <b>0</b></span>
+            <span>强拍和弦音 <b>100%</b></span>
+          </div>
+          <audio controls preload="none" src="mp3/new_piece_2001_melancholy.mp3"></audio>
+        </div>
+      </div>
+      <div class="phrase">
+        乐句峰值 旧 <code>[82, 82, 0, 0]</code> → 新 <code>[67, 68, 77, 67]</code>
+        &nbsp;|&nbsp; 有声乐句 旧 2/4 → 新 4/4
+        &nbsp;|&nbsp; 节奏型 旧 2 → 新 3
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <h3>忧伤 melancholy · seed=2002</h3>
+        <span class="tag">同参数对照</span>
+      </div>
+      <div class="pair">
+        <div class="side old">
+          <div class="side-title">旧版 v0.3</div>
+          <div class="stats">
+            <span>同音率 <b>46%</b></span>
+            <span>最长同音 <b>10</b></span>
+            <span>空小节 <b>4</b></span>
+            <span>强拍和弦音 <b>0%</b></span>
+          </div>
+          <audio controls preload="none" src="mp3/legacy_piece_2002_melancholy.mp3"></audio>
+        </div>
+        <div class="side new">
+          <div class="side-title">新版 v0.4</div>
+          <div class="stats">
+            <span>同音率 <b>12%</b></span>
+            <span>最长同音 <b>2</b></span>
+            <span>空小节 <b>0</b></span>
+            <span>强拍和弦音 <b>86%</b></span>
+          </div>
+          <audio controls preload="none" src="mp3/new_piece_2002_melancholy.mp3"></audio>
+        </div>
+      </div>
+      <div class="phrase">
+        乐句峰值 旧 <code>[79, 82, 0, 0]</code> → 新 <code>[67, 68, 75, 67]</code>
+        &nbsp;|&nbsp; 有声乐句 旧 2/4 → 新 4/4
+        &nbsp;|&nbsp; 节奏型 旧 2 → 新 3
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <h3>欢快 playful · seed=3001</h3>
+        <span class="tag">同参数对照</span>
+      </div>
+      <div class="pair">
+        <div class="side old">
+          <div class="side-title">旧版 v0.3</div>
+          <div class="stats">
+            <span>同音率 <b>54%</b></span>
+            <span>最长同音 <b>9</b></span>
+            <span>空小节 <b>4</b></span>
+            <span>强拍和弦音 <b>0%</b></span>
+          </div>
+          <audio controls preload="none" src="mp3/legacy_piece_3001_playful.mp3"></audio>
+        </div>
+        <div class="side new">
+          <div class="side-title">新版 v0.4</div>
+          <div class="stats">
+            <span>同音率 <b>8%</b></span>
+            <span>最长同音 <b>2</b></span>
+            <span>空小节 <b>0</b></span>
+            <span>强拍和弦音 <b>75%</b></span>
+          </div>
+          <audio controls preload="none" src="mp3/new_piece_3001_playful.mp3"></audio>
+        </div>
+      </div>
+      <div class="phrase">
+        乐句峰值 旧 <code>[82, 82, 0, 0]</code> → 新 <code>[71, 71, 79, 71]</code>
+        &nbsp;|&nbsp; 有声乐句 旧 2/4 → 新 4/4
+        &nbsp;|&nbsp; 节奏型 旧 2 → 新 3
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <h3>欢快 playful · seed=3002</h3>
+        <span class="tag">同参数对照</span>
+      </div>
+      <div class="pair">
+        <div class="side old">
+          <div class="side-title">旧版 v0.3</div>
+          <div class="stats">
+            <span>同音率 <b>51%</b></span>
+            <span>最长同音 <b>9</b></span>
+            <span>空小节 <b>4</b></span>
+            <span>强拍和弦音 <b>0%</b></span>
+          </div>
+          <audio controls preload="none" src="mp3/legacy_piece_3002_playful.mp3"></audio>
+        </div>
+        <div class="side new">
+          <div class="side-title">新版 v0.4</div>
+          <div class="stats">
+            <span>同音率 <b>8%</b></span>
+            <span>最长同音 <b>2</b></span>
+            <span>空小节 <b>0</b></span>
+            <span>强拍和弦音 <b>94%</b></span>
+          </div>
+          <audio controls preload="none" src="mp3/new_piece_3002_playful.mp3"></audio>
+        </div>
+      </div>
+      <div class="phrase">
+        乐句峰值 旧 <code>[82, 82, 0, 0]</code> → 新 <code>[72, 72, 81, 72]</code>
+        &nbsp;|&nbsp; 有声乐句 旧 2/4 → 新 4/4
+        &nbsp;|&nbsp; 节奏型 旧 2 → 新 3
+      </div>
+    </div>
+
+  <h2>完整指标</h2>
+  <table>
+    <thead><tr>
+      <th>情绪</th><th>seed</th><th>版本</th><th>音符</th><th>空小节</th><th>同音率</th>
+      <th>最长同音</th><th>整节重复</th><th>音级数</th><th>音域</th><th>平均音程</th>
+      <th>最大音程</th><th>强拍和弦音</th><th>A~A'</th><th>A~B</th><th>A~A''</th>
+    </tr></thead>
+    <tbody><tr class='old'><td>平静</td><td>1001</td><td>旧</td><td>36</td><td>4</td><td>43%</td><td>9</td><td>0%</td><td>7</td><td>14</td><td>2.91</td><td>14</td><td>33%</td><td>0.353</td><td>0.0</td><td>0.0</td></tr><tr class='new'><td>平静</td><td>1001</td><td>新</td><td>31</td><td>0</td><td>3%</td><td>2</td><td>25%</td><td>11</td><td>21</td><td>4.2</td><td>16</td><td>100%</td><td>0.571</td><td>0.125</td><td>0.667</td></tr><tr class='old'><td>平静</td><td>1002</td><td>旧</td><td>48</td><td>4</td><td>70%</td><td>12</td><td>0%</td><td>8</td><td>14</td><td>1.81</td><td>9</td><td>0%</td><td>0.75</td><td>0.0</td><td>0.0</td></tr><tr class='new'><td>平静</td><td>1002</td><td>新</td><td>31</td><td>0</td><td>3%</td><td>2</td><td>25%</td><td>9</td><td>16</td><td>2.8</td><td>12</td><td>88%</td><td>0.714</td><td>0.375</td><td>0.833</td></tr><tr class='old'><td>忧伤</td><td>2001</td><td>旧</td><td>40</td><td>4</td><td>54%</td><td>10</td><td>0%</td><td>9</td><td>17</td><td>2.67</td><td>14</td><td>50%</td><td>0.45</td><td>0.0</td><td>0.0</td></tr><tr class='new'><td>忧伤</td><td>2001</td><td>新</td><td>25</td><td>0</td><td>8%</td><td>3</td><td>12%</td><td>9</td><td>17</td><td>3.38</td><td>10</td><td>100%</td><td>0.4</td><td>0.125</td><td>0.6</td></tr><tr class='old'><td>忧伤</td><td>2002</td><td>旧</td><td>40</td><td>4</td><td>46%</td><td>10</td><td>0%</td><td>9</td><td>19</td><td>3.21</td><td>14</td><td>0%</td><td>0.474</td><td>0.0</td><td>0.0</td></tr><tr class='new'><td>忧伤</td><td>2002</td><td>新</td><td>25</td><td>0</td><td>12%</td><td>2</td><td>12%</td><td>8</td><td>15</td><td>2.12</td><td>7</td><td>86%</td><td>0.2</td><td>0.375</td><td>0.6</td></tr><tr class='old'><td>欢快</td><td>3001</td><td>旧</td><td>36</td><td>4</td><td>54%</td><td>9</td><td>0%</td><td>9</td><td>19</td><td>2.54</td><td>19</td><td>0%</td><td>0.444</td><td>0.0</td><td>0.0</td></tr><tr class='new'><td>欢快</td><td>3001</td><td>新</td><td>40</td><td>0</td><td>8%</td><td>2</td><td>12%</td><td>11</td><td>19</td><td>3.0</td><td>12</td><td>75%</td><td>0.222</td><td>0.444</td><td>0.778</td></tr><tr class='old'><td>欢快</td><td>3002</td><td>旧</td><td>36</td><td>4</td><td>51%</td><td>9</td><td>0%</td><td>8</td><td>19</td><td>2.57</td><td>19</td><td>0%</td><td>0.444</td><td>0.0</td><td>0.0</td></tr><tr class='new'><td>欢快</td><td>3002</td><td>新</td><td>40</td><td>0</td><td>8%</td><td>2</td><td>25%</td><td>12</td><td>21</td><td>2.95</td><td>12</td><td>94%</td><td>0.778</td><td>0.333</td><td>0.667</td></tr></tbody>
+  </table>
+
+  <div class="note">
+    A~A'/A~B/A~A'' 为音程序列相似度（0=毫无关系，1=逐字复制）。期望：A~A' 中等（既熟悉又有变化）、
+    A~B 低（明确对比）、A~A'' 较高（回到主题）。<br>
+    旧版"节奏多样性"偏高是假象：旧版音符起始位置因写入时的游标钳制发生漂移，每小节都"不同"，
+    而实际上 8 小节里有 4 小节根本没有主旋律。
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# 仅为建议值；合并进现有 [a_memorix.integration]，不要重复创建 TOML 段。
+[a_memorix.integration]
+chat_summary_writeback_enabled = true
+
+# 你当前诊断值为 72；建议先在测试环境改为 12。
+chat_summary_writeback_message_threshold = 12
+
+# 回看消息数；当前实现会取 min(context_length, pending_message_count)。
+chat_summary_writeback_context_length = 16
+
+# 先完成 claim 分类和历史数据清理，再恢复自动人物事实写回。
+# 迁移阶段建议暂时 false；确认分类器与来源记录正常后再改为 true。
+person_fact_writeback_enabled = false

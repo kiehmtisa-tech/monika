@@ -1,0 +1,21 @@
+# Monika Poetry 配置
+# 写诗走现有对话模型；数据库/检索/去重全部本地，零额外 LLM 调用
+
+[plugin]
+enabled = true
+config_version = "0.1.0"
+
+[poetry]
+default_mood = "平静"                  # 用户没说情绪时的默认基调
+default_lines = 12                     # 默认诗行数
+max_lines = 40                         # 行数上限
+temperature = 0.95                     # 写诗温度（比日常对话高一点）
+max_tokens = 2500                      # 含模型思考过程在内，太小会被 reasoning 吃光
+llm_timeout_ms = 90000                 # RPC 默认 30s 对改诗不够，放宽到 90s
+cooldown_seconds = 45                  # 写诗冷却（省 Token，防刷）
+auto_save = true                       # /poem 写完自动入库
+similarity_threshold = 0.72            # 二元组相似度超过就重写一次
+monika_default_visibility = "public"   # 莫妮卡自己的作品：可跨会话被她回忆
+user_default_visibility = "private"    # 用户提交的作品：默认私有
+allow_users = []                       # QQ号白名单，空=不限制
+allow_groups = []                      # 群号白名单，空=不限制

@@ -1,0 +1,5 @@
+{
+  "comment": "qq-fish budget gateway 非敏感设置",
+  "upstream_overrides": {},
+  "default_max_tokens": 4096
+}

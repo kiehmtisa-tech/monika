@@ -1,0 +1,29 @@
+# Monika 知识路由插件配置
+# 词法分类 + 来源过滤预取 + planner 注入；零 LLM 调用。
+
+[plugin]
+enabled = true
+config_version = "1.0.0"
+
+[router]
+# 注入开关（关掉后只做分类观测）
+inject_enabled = true
+# 预取候选条数上限
+prefetch_limit = 8
+# 最终进上下文的条数上限（2-4 为宜）
+max_inject_items = 3
+# 注入块总字数上限
+max_inject_chars = 900
+# 容器内 WebUI 只读接口
+webui_base = "http://127.0.0.1:8001"
+webui_json = "/MaiMBot/data/webui.json"
+
+[privacy]
+# respect_filter 守卫：routed=仅知识路由命中时注入；always=每轮注入；off=关闭
+# 注意：这只是软提示；硬修复见 docs/router/AUDIT.md（镜像补丁或上游修复）
+privacy_guard_mode = "routed"
+
+[metrics]
+enabled = true
+metrics_path = "/MaiMBot/data/knowledge_router/metrics.jsonl"
+metrics_max_bytes = 2000000

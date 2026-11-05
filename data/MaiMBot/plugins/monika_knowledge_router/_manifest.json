@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "name": "Monika Knowledge Router",
+  "description": "知识路由：本地词法规则识别检索意图，按来源前缀过滤预取可信知识参考注入 planner，降低该查却没查的概率；含 respect_filter 隐私守卫。零新增模型调用。",
+  "author": {
+    "name": "DRAGON",
+    "url": "https://github.com/dragon-qq-fish"
+  },
+  "license": "MIT",
+  "urls": {
+    "repository": "https://github.com/dragon-qq-fish/monika-knowledge-router",
+    "homepage": "https://github.com/dragon-qq-fish/monika-knowledge-router",
+    "documentation": "https://github.com/dragon-qq-fish/monika-knowledge-router#readme",
+    "issues": "https://github.com/dragon-qq-fish/monika-knowledge-router/issues"
+  },
+  "host_application": {
+    "min_version": "1.0.0",
+    "max_version": "1.9.9"
+  },
+  "sdk": {
+    "min_version": "2.5.2",
+    "max_version": "2.99.99"
+  },
+  "dependencies": [],
+  "capabilities": [],
+  "i18n": {
+    "default_locale": "zh-CN",
+    "supported_locales": ["zh-CN"]
+  },
+  "id": "dragon.monika-knowledge-router"
+}

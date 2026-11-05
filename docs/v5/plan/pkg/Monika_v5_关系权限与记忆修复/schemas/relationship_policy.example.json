@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "platform": "qq",
+  "owner": {
+    "user_id": "100000001",
+    "role": "owner_admin",
+    "relationship": "special_person",
+    "publicly_announce_relationship": false,
+    "group_command_requires_real_mention": true,
+    "private_command_requires_explicit_intent": true
+  },
+  "default_users": {
+    "role": "friend",
+    "relationship": "friend",
+    "admin": false
+  },
+  "commands": {
+    "explicit_intent_required": true,
+    "ambiguous_action": "ask_confirmation",
+    "default_scope": "current_group",
+    "global_scope_phrases": [
+      "全局",
+      "所有群",
+      "所有群聊",
+      "以后所有群"
+    ],
+    "prohibition_persists_until_revoked": true,
+    "system_policy_override": false,
+    "persona_core_override": false
+  },
+  "relationship_model": {
+    "visible_affection_score": false,
+    "internal_numeric_affection": false,
+    "familiarity_labels": [
+      "new",
+      "known",
+      "familiar"
+    ],
+    "familiarity_grants_permission": false
+  }
+}

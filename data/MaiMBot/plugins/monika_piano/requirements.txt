@@ -1,0 +1,11 @@
+# Monika Piano 插件额外依赖（MaiBot 镜像内已自带 websockets，无需声明）
+#
+# 除 Python 包外还需系统组件：
+#   fluidsynth            生成 WAV 的渲染器
+#   TimGM6mb.sf2          6 MB 轻量 SoundFont
+#
+# 这些运行时已固化到持久化卷 ./depends-data/piano-runtime（bind 挂载），
+# 镜像重建后仍可用。自检与恢复：
+#   bash scripts/piano_deps.sh check
+#   bash scripts/piano_deps.sh restore
+mido==1.3.3

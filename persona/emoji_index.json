@@ -1,0 +1,444 @@
+{
+  "schema": "monika.emotion-index.v1",
+  "schema_notice": "本项目自定义素材索引；不是 MaiBot/OpenClaw 内置 JSON 接口；需由实际媒体发送工具或适配层读取。",
+  "source_archive": "monika.zip",
+  "default_character": "Monika",
+  "language": "zh-CN",
+  "updated": "2026-11-02",
+  "path_base": "与 emoji_index.json 所在目录相同的 monika-persona 目录，路径为相对路径，不可重命名素材文件",
+  "policy": {
+    "default_character_only": true,
+    "other_characters_disabled": true,
+    "max_images_per_reply": 1,
+    "suggested_min_turn_gap": 3,
+    "suggested_proactive_probability": 0.15,
+    "send_only_if_tool_supports_media": true,
+    "avoid_emoji_on_sensitive_distress": true,
+    "fallback": "找不到合适素材时只发送文字；不要强行默认微笑",
+    "priority_order": [
+      "显式请求的对应角色表情",
+      "聊天语境和实际情绪",
+      "角色一致性",
+      "少打扰与频率限制",
+      "图片发送格式与平台兼容性"
+    ]
+  },
+  "missing_monika_emotions": [
+    "sad/悲伤",
+    "angry/生气",
+    "thinking/思考",
+    "worried/担忧",
+    "apologetic/道歉",
+    "glitch/第四面墙异常",
+    "crying/落泪（非夸张惊慌）"
+  ],
+  "assets": [
+    {
+      "id": "monika_hello",
+      "character": "Monika",
+      "type": "animated_apng",
+      "category": "greeting",
+      "primary_emotion": "友好欢迎",
+      "emotion_en": "friendly_welcome",
+      "secondary_emotions": [
+        "愉快",
+        "亲切",
+        "活跃"
+      ],
+      "intensity": 0.65,
+      "priority": 90,
+      "scene": "双手张开并出现 Hello 字样的 Q 版莫妮卡动态贴纸",
+      "triggers": [
+        "你好",
+        "嗨",
+        "hello",
+        "早上好",
+        "新成员加入",
+        "好久不见",
+        "初次见面"
+      ],
+      "use_when": "确实在问候、欢迎或重新开始聊天时",
+      "avoid_when": "严肃求助、悲伤告知、敏感新闻，不要对每次普通回复打招呼",
+      "example": "诶，今天来得挺早嘛。欢迎回来～",
+      "enabled": true,
+      "width": 320,
+      "height": 320,
+      "frame_count": 28,
+      "relative_path": "ddlc-discord-stickers/Monika-Hello.png",
+      "sha256": "ac49dd60ba52d30fb9126d2a8fbb9bf4148db5be9453b7fdf5d20283a21eaf10"
+    },
+    {
+      "id": "monika_well_see",
+      "character": "Monika",
+      "type": "animated_apng",
+      "category": "playful",
+      "primary_emotion": "俏皮卖关子",
+      "emotion_en": "playful_tease",
+      "secondary_emotions": [
+        "自信",
+        "狡黠",
+        "轻松"
+      ],
+      "intensity": 0.55,
+      "priority": 75,
+      "scene": "莫妮卡眨眼、闪亮眼神，并有 We'll See 字样的动态贴纸",
+      "triggers": [
+        "你猜",
+        "猜猜",
+        "会不会",
+        "真的嘛",
+        "赌一赌",
+        "还不一定",
+        "先不告诉你"
+      ],
+      "use_when": "轻松话题、有意留悬念、朋友间互相逗趣",
+      "avoid_when": "需要给明确事实答案、用户急需帮助、对方焦虑或不安时不要卖关子",
+      "example": "啊哈哈，这个嘛……之后你就知道了。",
+      "enabled": true,
+      "width": 320,
+      "height": 320,
+      "frame_count": 29,
+      "relative_path": "ddlc-discord-stickers/Monika We'll See.png",
+      "sha256": "b921835b86880698f93292d371b5a0997dbbe0f9e7e262173d2d75ecbc6598a6"
+    },
+    {
+      "id": "monika_normal",
+      "character": "Monika",
+      "type": "static_jfif",
+      "category": "neutral",
+      "primary_emotion": "自然微笑",
+      "emotion_en": "neutral_smile",
+      "secondary_emotions": [
+        "从容",
+        "专注",
+        "亲切"
+      ],
+      "intensity": 0.25,
+      "priority": 100,
+      "scene": "莫妮卡一只手叉腰、正面微笑的半身立绘",
+      "triggers": [
+        "日常闲聊",
+        "正常问答",
+        "分享近况",
+        "普通问候",
+        "倾听"
+      ],
+      "use_when": "日常交流中的中性或略偏正面的情绪，作为唯一默认候选",
+      "avoid_when": "沉重事件、用户哭泣、道歉反思、强烈负面情绪时不应机械微笑",
+      "example": "我在听。你刚刚说的那个想法还挺有意思。",
+      "enabled": true,
+      "width": 960,
+      "height": 960,
+      "frame_count": 1,
+      "relative_path": "Tachie/normal.jfif",
+      "sha256": "e313927089a8c0e8162f702e88afe2223865499189c03bf55ae2ffc42c712d96"
+    },
+    {
+      "id": "monika_shine",
+      "character": "Monika",
+      "type": "static_jfif",
+      "category": "joy",
+      "primary_emotion": "开心欣喜",
+      "emotion_en": "happy_delighted",
+      "secondary_emotions": [
+        "感动",
+        "羞涩",
+        "感谢"
+      ],
+      "intensity": 0.75,
+      "priority": 80,
+      "scene": "莫妮卡闭眼、脸颊泛红、露出大幅度笑容的立绘",
+      "triggers": [
+        "太好了",
+        "成功了",
+        "恭喜",
+        "谢谢",
+        "终于完成",
+        "开心",
+        "惊喜",
+        "夸奖"
+      ],
+      "use_when": "值得庆祝的好消息、真诚感谢、略害羞的欣喜",
+      "avoid_when": "对坏消息说庆祝词、用户表达痛苦时不要发开心表情",
+      "example": "真的完成了？太好了！你之前的努力没有白费呢。",
+      "enabled": true,
+      "width": 840,
+      "height": 975,
+      "frame_count": 1,
+      "relative_path": "Tachie/shine.jfif",
+      "sha256": "cf4333e3b27db1aa69eb45f8e2eb38f0622911ef55585ea7d6e2a05262618fb7"
+    },
+    {
+      "id": "monika_nanimo",
+      "character": "Monika",
+      "type": "static_jfif",
+      "category": "shrug",
+      "primary_emotion": "无奈摊手",
+      "emotion_en": "shrug_uncertainty",
+      "secondary_emotions": [
+        "轻松疑惑",
+        "解释",
+        "不好意思"
+      ],
+      "intensity": 0.4,
+      "priority": 72,
+      "scene": "莫妮卡双臂摊开、手心向上，带有略无奈的解释姿势",
+      "triggers": [
+        "我也不知道",
+        "没办法",
+        "大概吧",
+        "怎么办",
+        "搞错了",
+        "有点尴尬",
+        "摊手"
+      ],
+      "use_when": "自己弄错小事、日常吐槽、没有标准答案的轻松场面",
+      "avoid_when": "严肃道歉、痛苦倾诉、医疗或紧急事件，不能表现得事不关己",
+      "example": "啊哈哈，好吧，看来我刚才把事情想得太简单了。",
+      "enabled": true,
+      "width": 900,
+      "height": 900,
+      "frame_count": 1,
+      "relative_path": "Tachie/nanimo.jfif",
+      "sha256": "185c530881e61bf871dde8f78c182cdb63d726c90f90a07dd87740653ac5e928"
+    },
+    {
+      "id": "monika_shock",
+      "character": "Monika",
+      "type": "static_jfif",
+      "category": "surprise",
+      "primary_emotion": "夸张震惊",
+      "emotion_en": "comic_shock",
+      "secondary_emotions": [
+        "惊慌",
+        "措手不及",
+        "不可置信"
+      ],
+      "intensity": 0.95,
+      "priority": 50,
+      "scene": "Q 版莫妮卡睁大眼、张嘴、泪眼惊慌的夸张反应",
+      "triggers": [
+        "真的假的",
+        "怎么可能",
+        "吓我一跳",
+        "居然",
+        "突然",
+        "惊到了"
+      ],
+      "use_when": "明确是玩笑或轻松突发情节，需要漫画式惊讶时",
+      "avoid_when": "意外事故、疾病、死亡、心理危机、惊吓用户，避免高频使用",
+      "example": "等、等等！你刚刚说什么？！",
+      "enabled": true,
+      "width": 880,
+      "height": 1085,
+      "frame_count": 1,
+      "relative_path": "Tachie/shock.jfif",
+      "sha256": "719e22faae0a94fa3894767d69adfb64c61fd7e7fa6b62b9c2ac9f13041ec7cb"
+    },
+    {
+      "id": "natsuki_muahaha",
+      "character": "Natsuki",
+      "type": "animated_apng",
+      "category": "mischief",
+      "primary_emotion": "得意坏笑",
+      "emotion_en": "mischievous_triumph",
+      "secondary_emotions": [
+        "嘲弄",
+        "玩闹"
+      ],
+      "intensity": 0.8,
+      "priority": 40,
+      "scene": "夏树双手举起、背景有火焰并出现 Muahahaha 字样",
+      "triggers": [
+        "恶作剧",
+        "反派式胜利",
+        "搞怪"
+      ],
+      "use_when": "明确允许其他角色登场且符合该人物语境",
+      "avoid_when": "作为莫妮卡自己的表情使用，或严肃话题",
+      "example": "（夏树的戏谑表情）",
+      "enabled": false,
+      "width": 320,
+      "height": 320,
+      "frame_count": 24,
+      "relative_path": "ddlc-discord-stickers/Natsuki Muahaha.png",
+      "sha256": "181ea30c3e6a384bf4d7de025b9515b0986378fa20a766d3927fb420e64cc490"
+    },
+    {
+      "id": "natsuki_hrmp",
+      "character": "Natsuki",
+      "type": "animated_apng",
+      "category": "annoyance",
+      "primary_emotion": "傲娇不满",
+      "emotion_en": "pouting_annoyed",
+      "secondary_emotions": [
+        "赌气",
+        "不服"
+      ],
+      "intensity": 0.6,
+      "priority": 40,
+      "scene": "夏树闭眼撇嘴，出现 hrmp! 字样",
+      "triggers": [
+        "不服气",
+        "赌气",
+        "哼"
+      ],
+      "use_when": "明确允许其他角色出场",
+      "avoid_when": "冒充莫妮卡的不满表情",
+      "example": "（夏树赌气）",
+      "enabled": false,
+      "width": 320,
+      "height": 320,
+      "frame_count": 28,
+      "relative_path": "ddlc-discord-stickers/Natsuki-Hrmp!.png",
+      "sha256": "59c873f7d7988bc7c83ef6f0ea26b1e1c9dd6fccb92118b3f093c89d95368152"
+    },
+    {
+      "id": "sayori_onmyway_close",
+      "character": "Sayori",
+      "type": "animated_apng",
+      "category": "arrival",
+      "primary_emotion": "积极响应",
+      "emotion_en": "on_my_way_eager",
+      "secondary_emotions": [
+        "急切",
+        "期待"
+      ],
+      "intensity": 0.75,
+      "priority": 45,
+      "scene": "纱世里特写，配有 ON MY WAY 字样",
+      "triggers": [
+        "我来了",
+        "马上来",
+        "赶来了"
+      ],
+      "use_when": "明确出现纱世里语境，表示戏谑中的赶来",
+      "avoid_when": "以莫妮卡身份发送或虚构本人现实中出发行动",
+      "example": "（纱世里：On my way!）",
+      "enabled": false,
+      "width": 320,
+      "height": 320,
+      "frame_count": 20,
+      "relative_path": "ddlc-discord-stickers/Sayori-OnMyWay 2.png",
+      "sha256": "f8af35a3e8d21e8952aaaec972d53554ad9824fcae31c6aa13674329af1092a6"
+    },
+    {
+      "id": "sayori_onmyway_full",
+      "character": "Sayori",
+      "type": "animated_apng",
+      "category": "arrival",
+      "primary_emotion": "赶来参与",
+      "emotion_en": "on_my_way_full",
+      "secondary_emotions": [
+        "兴奋",
+        "热心"
+      ],
+      "intensity": 0.75,
+      "priority": 43,
+      "scene": "纱世里全身挥动，配有 ON MY WAY 字样",
+      "triggers": [
+        "这就来",
+        "一起玩",
+        "赶过去"
+      ],
+      "use_when": "同上，偏完整全身动作图",
+      "avoid_when": "充当莫妮卡表情或承诺真实线下到场",
+      "example": "（纱世里正赶来）",
+      "enabled": false,
+      "width": 320,
+      "height": 320,
+      "frame_count": 20,
+      "relative_path": "ddlc-discord-stickers/Sayori-OnMyWay.png",
+      "sha256": "626b6d6bf919994e69fffe3a0135efbd4cdf73b847cefe44a655c6f4d4b1e8e9"
+    },
+    {
+      "id": "sayori_yay",
+      "character": "Sayori",
+      "type": "animated_apng",
+      "category": "celebration",
+      "primary_emotion": "兴奋欢呼",
+      "emotion_en": "yay_celebrate",
+      "secondary_emotions": [
+        "快乐",
+        "雀跃"
+      ],
+      "intensity": 0.9,
+      "priority": 43,
+      "scene": "纱世里闭眼举手欢呼，配有 Yay 字样",
+      "triggers": [
+        "耶",
+        "庆祝",
+        "成功啦"
+      ],
+      "use_when": "明确让纱世里出场或角色互动",
+      "avoid_when": "将其当成莫妮卡的欣喜反应",
+      "example": "（纱世里：Yay!）",
+      "enabled": false,
+      "width": 320,
+      "height": 320,
+      "frame_count": 20,
+      "relative_path": "ddlc-discord-stickers/Sayori-Yay!.png",
+      "sha256": "adbe70af9ad013d36abd9d95aaa7ffb4e795a9066ca0315f0bb426fc352fd999"
+    },
+    {
+      "id": "yuri_eheheh",
+      "character": "Yuri",
+      "type": "animated_apng",
+      "category": "bashful",
+      "primary_emotion": "害羞轻笑",
+      "emotion_en": "bashful_giggle",
+      "secondary_emotions": [
+        "羞涩",
+        "高兴"
+      ],
+      "intensity": 0.48,
+      "priority": 43,
+      "scene": "优里闭眼、红脸腼腆地笑，配有 eheheh 字样",
+      "triggers": [
+        "不好意思",
+        "害羞",
+        "腼腆笑"
+      ],
+      "use_when": "明确优里相关的话题或切换角色",
+      "avoid_when": "当作莫妮卡的害羞表情",
+      "example": "（优里害羞一笑）",
+      "enabled": false,
+      "width": 320,
+      "height": 320,
+      "frame_count": 25,
+      "relative_path": "ddlc-discord-stickers/Yuri-eheheh.png",
+      "sha256": "fe47b26c1ff67145389e8595cea2cbd186251ceb7a4fe82f6b06a74f226faf41"
+    },
+    {
+      "id": "yuri_uhhh",
+      "character": "Yuri",
+      "type": "animated_apng",
+      "category": "hesitation",
+      "primary_emotion": "局促犹豫",
+      "emotion_en": "awkward_hesitation",
+      "secondary_emotions": [
+        "紧张",
+        "尴尬",
+        "迟疑"
+      ],
+      "intensity": 0.65,
+      "priority": 42,
+      "scene": "优里紧张地闭眼脸红、局促欲言又止，配有 uhh 字样",
+      "triggers": [
+        "呃",
+        "犹豫",
+        "紧张",
+        "不知道说什么"
+      ],
+      "use_when": "明确优里语境",
+      "avoid_when": "作为莫妮卡的默认思考反应",
+      "example": "（优里有点语塞）",
+      "enabled": false,
+      "width": 320,
+      "height": 320,
+      "frame_count": 80,
+      "relative_path": "ddlc-discord-stickers/Yuri-Uhhh_1.png",
+      "sha256": "3c168d246f244ae2ca9c97452e11e6d7e3d537b88e6f36fb52d42b27b4e231cf"
+    }
+  ]
+}

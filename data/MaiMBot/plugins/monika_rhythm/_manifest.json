@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "version": "0.1.0",
+  "name": "Monika Rhythm",
+  "description": "会话节奏：本地词法判定入站消息的社交作用，给回复一句节奏参考（不裁剪输出），并观测每轮回复次数与气泡数。",
+  "author": {
+    "name": "DRAGON",
+    "url": "https://github.com/dragon-qq-fish"
+  },
+  "license": "MIT",
+  "urls": {
+    "repository": "https://github.com/dragon-qq-fish/monika-rhythm",
+    "homepage": "https://github.com/dragon-qq-fish/monika-rhythm",
+    "documentation": "https://github.com/dragon-qq-fish/monika-rhythm#readme",
+    "issues": "https://github.com/dragon-qq-fish/monika-rhythm/issues"
+  },
+  "host_application": {
+    "min_version": "1.0.0",
+    "max_version": "1.9.9"
+  },
+  "sdk": {
+    "min_version": "2.5.2",
+    "max_version": "2.99.99"
+  },
+  "dependencies": [],
+  "capabilities": [],
+  "i18n": {
+    "default_locale": "zh-CN",
+    "supported_locales": ["zh-CN"]
+  },
+  "id": "dragon.monika-rhythm"
+}

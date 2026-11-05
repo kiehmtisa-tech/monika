@@ -1,0 +1,8 @@
+{
+  "schema": "monika.dynamic_terms.v1",
+  "version": "0.0.0",
+  "updated_at": "2026-11-03",
+  "approved_entries": [],
+  "quarantined_entries": [],
+  "explanation": "初始词库故意为空。由持续维护流程从可信公开来源生成经过证据审核的语境化条目；禁止臆造热门谐音政治词。每个条目需 aliases/context_required/false_positive_examples/source/review_after/approval。政治 P0 的语义规则不依赖词表的有无。"
+}

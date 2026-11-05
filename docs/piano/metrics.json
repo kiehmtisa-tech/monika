@@ -1,0 +1,614 @@
+[
+  {
+    "file": "piece_1001_calm.mid",
+    "bars": 8,
+    "bars_silent": 4,
+    "rh_notes": 36,
+    "lh_notes": 32,
+    "duration_sec_est_ignored": null,
+    "consecutive_same_pitch_ratio": 0.429,
+    "max_same_pitch_run": 9,
+    "exact_bar_copy_ratio": 0.0,
+    "rhythmic_pattern_diversity": 1.0,
+    "phrases_with_melody": 2,
+    "phrase_rhythm_distinct": 2,
+    "unique_pitches": 7,
+    "pitch_range": 14,
+    "mean_interval": 2.91,
+    "max_interval": 14,
+    "strong_beat_chord_tone_ratio": 0.333,
+    "final_root_to_tonic": true,
+    "final_note_is_chord_tone": true,
+    "phrase_peak": [
+      79,
+      82,
+      0,
+      0
+    ],
+    "phrase_peak_bar": [
+      0,
+      1,
+      2,
+      2
+    ],
+    "sim_A_A1": {
+      "pitch_iv": 0.353,
+      "rhythm": 0.833,
+      "onset": 0.222
+    },
+    "sim_A_B": {
+      "pitch_iv": 0.0,
+      "rhythm": 0.0,
+      "onset": 0.0
+    },
+    "sim_A_A2": {
+      "pitch_iv": 0.0,
+      "rhythm": 0.0,
+      "onset": 0.0
+    },
+    "warnings": [],
+    "warn_count": 0,
+    "dir": "legacy"
+  },
+  {
+    "file": "piece_1002_calm.mid",
+    "bars": 8,
+    "bars_silent": 4,
+    "rh_notes": 48,
+    "lh_notes": 32,
+    "duration_sec_est_ignored": null,
+    "consecutive_same_pitch_ratio": 0.702,
+    "max_same_pitch_run": 12,
+    "exact_bar_copy_ratio": 0.0,
+    "rhythmic_pattern_diversity": 1.0,
+    "phrases_with_melody": 2,
+    "phrase_rhythm_distinct": 2,
+    "unique_pitches": 8,
+    "pitch_range": 14,
+    "mean_interval": 1.81,
+    "max_interval": 9,
+    "strong_beat_chord_tone_ratio": 0.0,
+    "final_root_to_tonic": true,
+    "final_note_is_chord_tone": true,
+    "phrase_peak": [
+      84,
+      86,
+      0,
+      0
+    ],
+    "phrase_peak_bar": [
+      0,
+      1,
+      2,
+      2
+    ],
+    "sim_A_A1": {
+      "pitch_iv": 0.75,
+      "rhythm": 0.72,
+      "onset": 0.28
+    },
+    "sim_A_B": {
+      "pitch_iv": 0.0,
+      "rhythm": 0.0,
+      "onset": 0.0
+    },
+    "sim_A_A2": {
+      "pitch_iv": 0.0,
+      "rhythm": 0.0,
+      "onset": 0.0
+    },
+    "warnings": [],
+    "warn_count": 0,
+    "dir": "legacy"
+  },
+  {
+    "file": "piece_2001_melancholy.mid",
+    "bars": 8,
+    "bars_silent": 4,
+    "rh_notes": 40,
+    "lh_notes": 32,
+    "duration_sec_est_ignored": null,
+    "consecutive_same_pitch_ratio": 0.538,
+    "max_same_pitch_run": 10,
+    "exact_bar_copy_ratio": 0.0,
+    "rhythmic_pattern_diversity": 1.0,
+    "phrases_with_melody": 2,
+    "phrase_rhythm_distinct": 2,
+    "unique_pitches": 9,
+    "pitch_range": 17,
+    "mean_interval": 2.67,
+    "max_interval": 14,
+    "strong_beat_chord_tone_ratio": 0.5,
+    "final_root_to_tonic": true,
+    "final_note_is_chord_tone": true,
+    "phrase_peak": [
+      82,
+      82,
+      0,
+      0
+    ],
+    "phrase_peak_bar": [
+      0,
+      1,
+      2,
+      2
+    ],
+    "sim_A_A1": {
+      "pitch_iv": 0.45,
+      "rhythm": 0.81,
+      "onset": 0.238
+    },
+    "sim_A_B": {
+      "pitch_iv": 0.0,
+      "rhythm": 0.0,
+      "onset": 0.0
+    },
+    "sim_A_A2": {
+      "pitch_iv": 0.0,
+      "rhythm": 0.0,
+      "onset": 0.0
+    },
+    "warnings": [],
+    "warn_count": 0,
+    "dir": "legacy"
+  },
+  {
+    "file": "piece_2002_melancholy.mid",
+    "bars": 8,
+    "bars_silent": 4,
+    "rh_notes": 40,
+    "lh_notes": 32,
+    "duration_sec_est_ignored": null,
+    "consecutive_same_pitch_ratio": 0.462,
+    "max_same_pitch_run": 10,
+    "exact_bar_copy_ratio": 0.0,
+    "rhythmic_pattern_diversity": 1.0,
+    "phrases_with_melody": 2,
+    "phrase_rhythm_distinct": 2,
+    "unique_pitches": 9,
+    "pitch_range": 19,
+    "mean_interval": 3.21,
+    "max_interval": 14,
+    "strong_beat_chord_tone_ratio": 0.0,
+    "final_root_to_tonic": true,
+    "final_note_is_chord_tone": true,
+    "phrase_peak": [
+      79,
+      82,
+      0,
+      0
+    ],
+    "phrase_peak_bar": [
+      0,
+      1,
+      2,
+      2
+    ],
+    "sim_A_A1": {
+      "pitch_iv": 0.474,
+      "rhythm": 0.85,
+      "onset": 0.55
+    },
+    "sim_A_B": {
+      "pitch_iv": 0.0,
+      "rhythm": 0.0,
+      "onset": 0.0
+    },
+    "sim_A_A2": {
+      "pitch_iv": 0.0,
+      "rhythm": 0.0,
+      "onset": 0.0
+    },
+    "warnings": [],
+    "warn_count": 0,
+    "dir": "legacy"
+  },
+  {
+    "file": "piece_3001_playful.mid",
+    "bars": 8,
+    "bars_silent": 4,
+    "rh_notes": 36,
+    "lh_notes": 32,
+    "duration_sec_est_ignored": null,
+    "consecutive_same_pitch_ratio": 0.543,
+    "max_same_pitch_run": 9,
+    "exact_bar_copy_ratio": 0.0,
+    "rhythmic_pattern_diversity": 1.0,
+    "phrases_with_melody": 2,
+    "phrase_rhythm_distinct": 2,
+    "unique_pitches": 9,
+    "pitch_range": 19,
+    "mean_interval": 2.54,
+    "max_interval": 19,
+    "strong_beat_chord_tone_ratio": 0.0,
+    "final_root_to_tonic": true,
+    "final_note_is_chord_tone": true,
+    "phrase_peak": [
+      82,
+      82,
+      0,
+      0
+    ],
+    "phrase_peak_bar": [
+      0,
+      1,
+      2,
+      2
+    ],
+    "sim_A_A1": {
+      "pitch_iv": 0.444,
+      "rhythm": 0.789,
+      "onset": 0.211
+    },
+    "sim_A_B": {
+      "pitch_iv": 0.0,
+      "rhythm": 0.0,
+      "onset": 0.0
+    },
+    "sim_A_A2": {
+      "pitch_iv": 0.0,
+      "rhythm": 0.0,
+      "onset": 0.0
+    },
+    "warnings": [],
+    "warn_count": 0,
+    "dir": "legacy"
+  },
+  {
+    "file": "piece_3002_playful.mid",
+    "bars": 8,
+    "bars_silent": 4,
+    "rh_notes": 36,
+    "lh_notes": 32,
+    "duration_sec_est_ignored": null,
+    "consecutive_same_pitch_ratio": 0.514,
+    "max_same_pitch_run": 9,
+    "exact_bar_copy_ratio": 0.0,
+    "rhythmic_pattern_diversity": 1.0,
+    "phrases_with_melody": 2,
+    "phrase_rhythm_distinct": 2,
+    "unique_pitches": 8,
+    "pitch_range": 19,
+    "mean_interval": 2.57,
+    "max_interval": 19,
+    "strong_beat_chord_tone_ratio": 0.0,
+    "final_root_to_tonic": true,
+    "final_note_is_chord_tone": true,
+    "phrase_peak": [
+      82,
+      82,
+      0,
+      0
+    ],
+    "phrase_peak_bar": [
+      0,
+      1,
+      2,
+      2
+    ],
+    "sim_A_A1": {
+      "pitch_iv": 0.444,
+      "rhythm": 0.789,
+      "onset": 0.158
+    },
+    "sim_A_B": {
+      "pitch_iv": 0.0,
+      "rhythm": 0.0,
+      "onset": 0.0
+    },
+    "sim_A_A2": {
+      "pitch_iv": 0.0,
+      "rhythm": 0.0,
+      "onset": 0.0
+    },
+    "warnings": [],
+    "warn_count": 0,
+    "dir": "legacy"
+  },
+  {
+    "file": "piece_1001_calm.mid",
+    "bars": 8,
+    "bars_silent": 0,
+    "rh_notes": 31,
+    "lh_notes": 51,
+    "duration_sec_est_ignored": null,
+    "consecutive_same_pitch_ratio": 0.033,
+    "max_same_pitch_run": 2,
+    "exact_bar_copy_ratio": 0.25,
+    "rhythmic_pattern_diversity": 0.375,
+    "phrases_with_melody": 4,
+    "phrase_rhythm_distinct": 3,
+    "unique_pitches": 11,
+    "pitch_range": 21,
+    "mean_interval": 4.2,
+    "max_interval": 16,
+    "strong_beat_chord_tone_ratio": 1.0,
+    "final_root_to_tonic": true,
+    "final_note_is_chord_tone": true,
+    "phrase_peak": [
+      72,
+      72,
+      81,
+      72
+    ],
+    "phrase_peak_bar": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "sim_A_A1": {
+      "pitch_iv": 0.571,
+      "rhythm": 0.75,
+      "onset": 0.625
+    },
+    "sim_A_B": {
+      "pitch_iv": 0.125,
+      "rhythm": 0.667,
+      "onset": 0.333
+    },
+    "sim_A_A2": {
+      "pitch_iv": 0.667,
+      "rhythm": 0.714,
+      "onset": 0.286
+    },
+    "warnings": [],
+    "warn_count": 0,
+    "dir": "new"
+  },
+  {
+    "file": "piece_1002_calm.mid",
+    "bars": 8,
+    "bars_silent": 0,
+    "rh_notes": 31,
+    "lh_notes": 51,
+    "duration_sec_est_ignored": null,
+    "consecutive_same_pitch_ratio": 0.033,
+    "max_same_pitch_run": 2,
+    "exact_bar_copy_ratio": 0.25,
+    "rhythmic_pattern_diversity": 0.375,
+    "phrases_with_melody": 4,
+    "phrase_rhythm_distinct": 3,
+    "unique_pitches": 9,
+    "pitch_range": 16,
+    "mean_interval": 2.8,
+    "max_interval": 12,
+    "strong_beat_chord_tone_ratio": 0.875,
+    "final_root_to_tonic": true,
+    "final_note_is_chord_tone": true,
+    "phrase_peak": [
+      67,
+      67,
+      76,
+      67
+    ],
+    "phrase_peak_bar": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "sim_A_A1": {
+      "pitch_iv": 0.714,
+      "rhythm": 0.75,
+      "onset": 0.5
+    },
+    "sim_A_B": {
+      "pitch_iv": 0.375,
+      "rhythm": 0.667,
+      "onset": 0.444
+    },
+    "sim_A_A2": {
+      "pitch_iv": 0.833,
+      "rhythm": 0.714,
+      "onset": 0.571
+    },
+    "warnings": [],
+    "warn_count": 0,
+    "dir": "new"
+  },
+  {
+    "file": "piece_2001_melancholy.mid",
+    "bars": 8,
+    "bars_silent": 0,
+    "rh_notes": 25,
+    "lh_notes": 51,
+    "duration_sec_est_ignored": null,
+    "consecutive_same_pitch_ratio": 0.083,
+    "max_same_pitch_run": 3,
+    "exact_bar_copy_ratio": 0.125,
+    "rhythmic_pattern_diversity": 0.5,
+    "phrases_with_melody": 4,
+    "phrase_rhythm_distinct": 3,
+    "unique_pitches": 9,
+    "pitch_range": 17,
+    "mean_interval": 3.38,
+    "max_interval": 10,
+    "strong_beat_chord_tone_ratio": 1.0,
+    "final_root_to_tonic": true,
+    "final_note_is_chord_tone": true,
+    "phrase_peak": [
+      67,
+      68,
+      77,
+      67
+    ],
+    "phrase_peak_bar": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "sim_A_A1": {
+      "pitch_iv": 0.4,
+      "rhythm": 0.333,
+      "onset": 0.333
+    },
+    "sim_A_B": {
+      "pitch_iv": 0.125,
+      "rhythm": 0.444,
+      "onset": 0.111
+    },
+    "sim_A_A2": {
+      "pitch_iv": 0.6,
+      "rhythm": 1.0,
+      "onset": 0.333
+    },
+    "warnings": [],
+    "warn_count": 0,
+    "dir": "new"
+  },
+  {
+    "file": "piece_2002_melancholy.mid",
+    "bars": 8,
+    "bars_silent": 0,
+    "rh_notes": 25,
+    "lh_notes": 51,
+    "duration_sec_est_ignored": null,
+    "consecutive_same_pitch_ratio": 0.125,
+    "max_same_pitch_run": 2,
+    "exact_bar_copy_ratio": 0.125,
+    "rhythmic_pattern_diversity": 0.5,
+    "phrases_with_melody": 4,
+    "phrase_rhythm_distinct": 3,
+    "unique_pitches": 8,
+    "pitch_range": 15,
+    "mean_interval": 2.12,
+    "max_interval": 7,
+    "strong_beat_chord_tone_ratio": 0.857,
+    "final_root_to_tonic": true,
+    "final_note_is_chord_tone": true,
+    "phrase_peak": [
+      67,
+      68,
+      75,
+      67
+    ],
+    "phrase_peak_bar": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "sim_A_A1": {
+      "pitch_iv": 0.2,
+      "rhythm": 0.167,
+      "onset": 0.333
+    },
+    "sim_A_B": {
+      "pitch_iv": 0.375,
+      "rhythm": 0.444,
+      "onset": 0.444
+    },
+    "sim_A_A2": {
+      "pitch_iv": 0.6,
+      "rhythm": 1.0,
+      "onset": 0.667
+    },
+    "warnings": [],
+    "warn_count": 0,
+    "dir": "new"
+  },
+  {
+    "file": "piece_3001_playful.mid",
+    "bars": 8,
+    "bars_silent": 0,
+    "rh_notes": 40,
+    "lh_notes": 51,
+    "duration_sec_est_ignored": null,
+    "consecutive_same_pitch_ratio": 0.077,
+    "max_same_pitch_run": 2,
+    "exact_bar_copy_ratio": 0.125,
+    "rhythmic_pattern_diversity": 0.5,
+    "phrases_with_melody": 4,
+    "phrase_rhythm_distinct": 3,
+    "unique_pitches": 11,
+    "pitch_range": 19,
+    "mean_interval": 3.0,
+    "max_interval": 12,
+    "strong_beat_chord_tone_ratio": 0.75,
+    "final_root_to_tonic": true,
+    "final_note_is_chord_tone": true,
+    "phrase_peak": [
+      71,
+      71,
+      79,
+      71
+    ],
+    "phrase_peak_bar": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "sim_A_A1": {
+      "pitch_iv": 0.222,
+      "rhythm": 0.8,
+      "onset": 0.3
+    },
+    "sim_A_B": {
+      "pitch_iv": 0.444,
+      "rhythm": 0.7,
+      "onset": 0.3
+    },
+    "sim_A_A2": {
+      "pitch_iv": 0.778,
+      "rhythm": 0.8,
+      "onset": 0.2
+    },
+    "warnings": [],
+    "warn_count": 0,
+    "dir": "new"
+  },
+  {
+    "file": "piece_3002_playful.mid",
+    "bars": 8,
+    "bars_silent": 0,
+    "rh_notes": 40,
+    "lh_notes": 51,
+    "duration_sec_est_ignored": null,
+    "consecutive_same_pitch_ratio": 0.077,
+    "max_same_pitch_run": 2,
+    "exact_bar_copy_ratio": 0.25,
+    "rhythmic_pattern_diversity": 0.5,
+    "phrases_with_melody": 4,
+    "phrase_rhythm_distinct": 3,
+    "unique_pitches": 12,
+    "pitch_range": 21,
+    "mean_interval": 2.95,
+    "max_interval": 12,
+    "strong_beat_chord_tone_ratio": 0.938,
+    "final_root_to_tonic": true,
+    "final_note_is_chord_tone": true,
+    "phrase_peak": [
+      72,
+      72,
+      81,
+      72
+    ],
+    "phrase_peak_bar": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "sim_A_A1": {
+      "pitch_iv": 0.778,
+      "rhythm": 0.8,
+      "onset": 0.3
+    },
+    "sim_A_B": {
+      "pitch_iv": 0.333,
+      "rhythm": 0.8,
+      "onset": 0.2
+    },
+    "sim_A_A2": {
+      "pitch_iv": 0.667,
+      "rhythm": 0.8,
+      "onset": 0.1
+    },
+    "warnings": [],
+    "warn_count": 0,
+    "dir": "new"
+  }
+]

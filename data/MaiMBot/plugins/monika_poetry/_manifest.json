@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "version": "0.1.0",
+  "name": "Monika Poetry",
+  "description": "莫妮卡的诗歌创作、阅读与长期作品库：/poem 写诗、/readpoem 读诗、/revise 改诗（新版本不覆盖旧稿），SQLite 存储、本地去重、原作诗只做研究索引。",
+  "author": {
+    "name": "DRAGON",
+    "url": "https://github.com/dragon-qq-fish"
+  },
+  "license": "MIT",
+  "urls": {
+    "repository": "https://github.com/dragon-qq-fish/monika-poetry",
+    "homepage": "https://github.com/dragon-qq-fish/monika-poetry",
+    "documentation": "https://github.com/dragon-qq-fish/monika-poetry#readme",
+    "issues": "https://github.com/dragon-qq-fish/monika-poetry/issues"
+  },
+  "host_application": {
+    "min_version": "1.0.0",
+    "max_version": "1.9.9"
+  },
+  "sdk": {
+    "min_version": "2.5.2",
+    "max_version": "2.99.99"
+  },
+  "dependencies": [],
+  "capabilities": [
+    "send.text",
+    "llm.generate"
+  ],
+  "i18n": {
+    "default_locale": "zh-CN",
+    "supported_locales": ["zh-CN"]
+  },
+  "id": "dragon.monika-poetry"
+}

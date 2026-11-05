@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "version": "0.1.0",
+  "name": "Monika Piano",
+  "description": "让莫妮卡即兴弹一段原创钢琴曲：/piano 本地生成（零 LLM 调用），MIDI→FluidSynth→语音发送。",
+  "author": {
+    "name": "DRAGON",
+    "url": "https://github.com/dragon-qq-fish"
+  },
+  "license": "MIT",
+  "urls": {
+    "repository": "https://github.com/dragon-qq-fish/monika-piano",
+    "homepage": "https://github.com/dragon-qq-fish/monika-piano",
+    "documentation": "https://github.com/dragon-qq-fish/monika-piano#readme",
+    "issues": "https://github.com/dragon-qq-fish/monika-piano/issues"
+  },
+  "host_application": {
+    "min_version": "1.0.0",
+    "max_version": "1.9.9"
+  },
+  "sdk": {
+    "min_version": "2.5.2",
+    "max_version": "2.99.99"
+  },
+  "dependencies": [],
+  "capabilities": [
+    "send.text"
+  ],
+  "i18n": {
+    "default_locale": "zh-CN",
+    "supported_locales": ["zh-CN"]
+  },
+  "id": "dragon.monika-piano"
+}

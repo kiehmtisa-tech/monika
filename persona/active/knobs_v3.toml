@@ -1,0 +1,17 @@
+# Monika v3 行为开关（只允许白名单字段，由 scripts/persona_apply.py 写入 bot_config.toml）
+# 依据：inbox/monika_chat_v3/Monika_拟人化改造_v3/MaiBot_最小修改片段.toml
+
+[response_splitter]
+enable = false            # 停用自动拆多气泡（三气泡问题的首要排查开关）
+mode = "rule"             # 不用 llm splitter，避免多一次模型调用
+max_split_num = 1         # 双保险：enable=false 时本不启用
+
+[chinese_typo]
+enable = false            # 不用人为错别字伪造真人感
+
+[chat.reply_timing]
+talk_value = 0.5          # 只影响群聊发言倾向，与私聊一次回复几句无关
+
+[chat.reply_style]
+private_quote_frequency = "never"     # 私聊不引用，少一层机械感
+group_quote_frequency = "occasionally"

@@ -1,0 +1,39 @@
+# Monika Piano 配置
+# 零 LLM 调用：/piano [mood] [seed=N] [bpm=N] [bars=N]
+
+[plugin]
+enabled = true
+config_version = "0.1.0"
+
+[piano]
+default_mood = "melancholy"
+output_dir = "/MaiMBot/data/piano"        # 容器内路径 (与 napcat 共享卷)
+soundfont = "/usr/share/sounds/sf2/TimGM6mb.sf2"
+napcat_ws = "ws://maim-bot-napcat:3001"
+napcat_token = ""                      # 填入 NapCat OneBot WS token，勿提交
+cooldown_seconds = 60                      # 每会话冷却, 防刷
+variation_strength = -1                    # -1=按 variation 自动推导; 0.0~1.0 可强制
+min_mem_available_mb = 200                 # 可用内存低于此值拒绝生成 (防 OOM)
+max_load1 = 6.0                            # 1 分钟负载高于此值拒绝生成
+cleanup_enabled = true                     # 作品库维护, 每天最多一次
+cleanup_dry_run = false                    # true=只记录计划不真删
+wav_ttl_days = 30                          # 普通 WAV 保留天数 (只删音频, 保留乐谱)
+max_wav_mb = 300                           # WAV 总容量上限, 超出按最旧优先清理
+max_pieces = 5000                          # 作品条数上限 (超限整首移除最旧的)
+midi_max_mb = 1024                         # 乐谱+元数据总容量安全网
+min_keep_days = 7                          # 最近 N 天的作品不会被整首移除
+allow_users = []                           # QQ号白名单, 空=不限制, 例: ["100000001"]
+allow_groups = []                          # 群号白名单, 空=不限制
+
+# ---- P9 在线曲谱库（Mutopia 合法 MIDI） ----
+external_db = "/MaiMBot/data/piano/pieces.db"   # external_scores/external_render_cache 所在库
+external_wav_ttl_days = 30                # external_wavs 独立 TTL (external_midis 永不自动删)
+
+# ---- P8 自主音乐行为 ----
+gov_rules_path = "/MaiMBot/data/governance/rules.json"  # 只读对接治理禁止令
+quiet_hours_start = "23:00"               # 主动音频静默时段起
+quiet_hours_end = "08:00"                 # 主动音频静默时段止
+private_spontaneous_per_day = 1           # 私聊主动分享每天上限 (明确点播不占)
+group_spontaneous_interval_hours = 72     # 群聊主动分享最小间隔
+group_spontaneous_enabled_default = false # 群默认不主动发音频, 须显式开启
+admin_user_ids = []                        # 可下禁令/开群主动音频的管理员, 例: ["100000001"]

@@ -1,0 +1,55 @@
+# Monika v5 治理插件配置
+# 管理员三重校验（可信UID+真实@+明确意图）+ 关系身份注入 + 空闲收尾写回
+
+[plugin]
+enabled = true
+config_version = "0.1.0"
+
+[admin]
+# 唯一管理员 QQ：必须来自可信事件字段，绝不从昵称/正文推断
+owner_uid = "100000001"   # 管理员 QQ，部署时填真实值
+# Bot 自身 QQ，用于判定群聊里的真实 @ 段
+bot_uid = "100000002"     # Bot 自身 QQ
+# 只在私聊/内部使用的名字；群聊中不公开宣示特殊关系
+owner_name = ""            # 私聊/内部称呼，可留空
+rules_path = "/MaiMBot/data/governance/rules.json"
+
+[relation]
+enabled = true
+familiarity_path = "/MaiMBot/data/governance/familiarity.json"
+
+[flush]
+enabled = true
+flush_state_path = "/MaiMBot/data/governance/flush_state.json"
+# 会话空闲多久后视为收尾时机
+flush_idle_seconds = 1800
+# 至少有多少条未写回消息才值得收尾（避开寒暄）
+flush_min_messages = 4
+# 每个会话每天最多额外收尾次数
+flush_daily_cap = 1
+# 摘要回看条数（与 a_memorix.integration.chat_summary_writeback_context_length 对齐）
+flush_context_length = 16
+flush_check_interval = 60
+
+[guard]
+# 上下文守护：观测 token 并在超限时安全轮换短期上下文
+enabled = true
+# 软阈值：进入压缩候选（交给官方滚动摘要，不主动动作）
+guard_soft_tokens = 8000
+# 硬阈值：进入轮换候选
+guard_hard_tokens = 12000
+# 自动轮换默认关闭，避免误伤正在进行的话题；管理员可即时开关
+guard_auto_rotate = false
+guard_audit_path = "/MaiMBot/data/governance/context_guard.jsonl"
+
+[knowledge]
+# 四个独立知识集合：ddlc_canon / monika_persona / literature_music / content_policy
+enabled = true
+kb_root = "/MaiMBot/data/a-knowledge"
+# 启动时不自动导入（避免每次热重载重复导入产生重复段落）；
+# 需要时用管理员指令「导入知识库」触发，或跑 scripts/v5/v5_knowledge_webimport.py
+kb_import_on_load = false
+
+[inject]
+# 注入文本上限，防止挤占上下文
+inject_max_chars = 420

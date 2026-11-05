@@ -1,0 +1,20 @@
+# Monika 会话节奏插件配置
+# 只做本地词法判定 + 一句节奏参考 + 气泡观测，不调用任何模型。
+
+[plugin]
+enabled = true
+config_version = "0.1.0"
+
+[rhythm]
+# 是否注入节奏参考；关掉只保留观测
+enabled = true
+# 允许提示的状态，留空 = 全部（PARTING / ACK_DONE / SHARING / EMOTION / QUESTION / HUMOR / NOISE）
+states = []
+# 单条提示的字数上限，防止挤占上下文
+hint_max_chars = 60
+
+[metrics]
+# 每轮观测落盘：stream / turn / intent / hint / replies / bubbles
+enabled = true
+metrics_path = "/MaiMBot/data/rhythm/metrics.jsonl"
+metrics_max_bytes = 2000000

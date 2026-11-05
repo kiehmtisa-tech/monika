@@ -1,0 +1,39 @@
+# 密钥与本地状态 —— 绝不进 Git
+.env
+.napcat_token
+docker-config/mmc/
+docker-config/napcat/
+depends-data/
+backups/
+qq-login-qr.png
+*.log
+secrets/
+monika.zip
+budget/
+__pycache__/
+*.pyc
+
+# 数据目录整体忽略，仅放行插件源码。
+# 注意：git 不会进入被忽略的父目录，所以必须逐级 un-ignore，不能简单写 !data/...
+data/*
+!data/MaiMBot
+data/MaiMBot/*
+!data/MaiMBot/plugins
+!data/MaiMBot/a-knowledge
+data/MaiMBot/plugins/*
+!data/MaiMBot/plugins/monika_piano
+!data/MaiMBot/plugins/monika_poetry
+!data/MaiMBot/plugins/monika_rhythm
+!data/MaiMBot/plugins/monika_governance
+!data/MaiMBot/plugins/monika_policy
+!data/MaiMBot/plugins/monika_knowledge_router
+
+# 插件真实配置含 NapCat token，不入库；模板见 config.toml.example
+data/MaiMBot/plugins/monika_piano/config.toml
+
+# 内容政策插件真实配置含 NapCat token，不入库；规则目录随插件入库
+data/MaiMBot/plugins/monika_policy/config.toml
+
+# 补记：运行期日志与治理插件真实配置（含 QQ）不入库
+logs/
+data/MaiMBot/plugins/monika_governance/config.toml

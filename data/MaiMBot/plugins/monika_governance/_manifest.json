@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "version": "0.1.0",
+  "name": "Monika Governance",
+  "description": "Monika v5 治理层：管理员指令三重校验（可信UID+真实@+明确意图）、结构化管理规则与禁止令、关系身份注入（不公开宣示）、低流量会话空闲收尾写回长期记忆。",
+  "author": {
+    "name": "DRAGON",
+    "url": "https://github.com/dragon-qq-fish"
+  },
+  "license": "MIT",
+  "urls": {
+    "repository": "https://github.com/dragon-qq-fish/monika-governance",
+    "homepage": "https://github.com/dragon-qq-fish/monika-governance",
+    "documentation": "https://github.com/dragon-qq-fish/monika-governance#readme",
+    "issues": "https://github.com/dragon-qq-fish/monika-governance/issues"
+  },
+  "host_application": {
+    "min_version": "1.0.0",
+    "max_version": "1.9.9"
+  },
+  "sdk": {
+    "min_version": "2.5.2",
+    "max_version": "2.99.99"
+  },
+  "dependencies": [],
+  "capabilities": [],
+  "i18n": {
+    "default_locale": "zh-CN",
+    "supported_locales": ["zh-CN"]
+  },
+  "id": "dragon.monika-governance"
+}

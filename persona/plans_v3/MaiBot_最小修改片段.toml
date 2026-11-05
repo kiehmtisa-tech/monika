@@ -1,0 +1,26 @@
+# 这是用于合并的配置片段，不是完整 bot_config.toml。
+# 修改 MaiBot 现有已生成的对应字段，不要将相同 [section] 重复插入。
+# 先备份 config/bot_config.toml，再改 WebUI 或 TOML。
+
+[response_splitter]
+enable = false             # 先停用自动拆多气泡：核心排障开关
+mode = "rule"             # 保留，不用 llm splitter（避免新增模型调用）
+max_split_num = 1          # 防误操作；enable=false 时不启用
+
+[chinese_typo]
+enable = false             # 不用人为错别字制造“真人感”
+
+[chat.reply_timing]
+talk_value = 0.5          # 只控制群聊发言倾向；建议起点，非绝对概率
+mentioned_bot_reply = true
+inevitable_at_reply = true
+# planner_message_steering = true  # 可选：经测试有消息接续滞后时再开启
+
+[chat.reply_style]
+private_quote_frequency = "never"
+group_quote_frequency = "occasionally"
+
+# [personality] 的字段由配套 JSON 人设导入，不在这里重复覆盖。
+# multiple_probability 在配套 JSON 中已设为 0。
+# 如要打开长期记忆，先核对 embedding 配置与隐私隔离，再单独改：
+# [a_memorix.plugin] enabled = true

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Monika Memory Claim",
+  "type": "object",
+  "required": [
+    "claim_id",
+    "subject_id",
+    "claim_type",
+    "statement",
+    "stability",
+    "confidence",
+    "source",
+    "status"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string",
+      "description": "Canonical ID, e.g. qq:100000001 or bot:monika"
+    },
+    "claim_type": {
+      "type": "string",
+      "enum": [
+        "identity",
+        "preference",
+        "interest",
+        "episodic_event",
+        "transient_state",
+        "skill_state",
+        "relationship",
+        "boundary"
+      ]
+    },
+    "statement": {
+      "type": "string"
+    },
+    "stability": {
+      "type": "string",
+      "enum": [
+        "transient",
+        "episodic",
+        "candidate_stable",
+        "stable"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "platform",
+        "session_id",
+        "observed_at"
+      ],
+      "properties": {
+        "platform": {
+          "type": "string"
+        },
+        "session_id": {
+          "type": "string"
+        },
+        "message_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source_scope": {
+          "type": "string",
+          "enum": [
+            "private",
+            "group",
+            "explicit_user_confirmation",
+            "curated_document"
+          ]
+        }
+      }
+    },
+    "valid_until": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "private_only",
+        "group_scoped",
+        "cross_chat_safe",
+        "canon_only"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "candidate",
+        "confirmed",
+        "rejected",
+        "superseded"
+      ]
+    },
+    "canonical_event_key": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
